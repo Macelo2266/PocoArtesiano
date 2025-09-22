@@ -1,15 +1,35 @@
-🚀 Projeto Poços Artesianos 🚀
+# Projeto Poços Artesianos
 
-Acabei de finalizar um projeto de API REST em Spring Boot para gerenciar poços artesianos! 💧
+Este projeto é uma API REST em **Spring Boot** para gerenciar poços artesianos, permitindo cadastrar, listar e filtrar fontes de água.
 
-Com esta API, é possível:
-- Cadastrar poços com informações detalhadas;
-- Listar todos os poços cadastrados;
-- Filtrar por município;
-- Buscar poço por ID.
+## Funcionalidades
 
-Usei tecnologias como Java 17, Spring Boot e JPA, com testes feitos pelo Insomnia.
+- **Cadastrar poços** via JSON.
+- **Listar todos os poços**.
+- **Buscar poço por ID**.
+- **Filtrar poços por município**.
+- **Importar poços de teste**.
 
-É um ótimo projeto para quem quer ver **Spring Boot e APIs REST em ação**.
+## Endpoints
 
-Confira no GitHub: https://github.com/Macelo2266/PocoArtesiano
+| Método | URL | Descrição |
+|--------|-----|-----------|
+| GET    | /api/fontes | Lista todos os poços |
+| GET    | /api/fontes/{id} | Busca poço pelo ID |
+| GET    | /api/fontes?municipio={nome} | Filtra poços por município |
+| POST   | /api/fontes | Cria novo poço (JSON) |
+| POST   | /api/fontes/importar | Cria poços de teste |
+
+## Exemplo de JSON para cadastrar um poço
+
+```json
+{
+  "nome": "Poço de Carão",
+  "tipo": "Poço Artesiano",
+  "latitude": -7.123,
+  "longitude": -38.456,
+  "capacidadeLitros": 50000,
+  "municipio": "Olho d'Água - PB",
+  "statusFonte": "ATIVA",
+  "externalId": "2"
+}
